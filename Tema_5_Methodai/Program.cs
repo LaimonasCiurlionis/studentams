@@ -41,6 +41,9 @@ namespace Tema_5_Methodai
             //NupiestiRemeli(10, 10);
 
             int sum1 = CalculateSumRecursively(1, 10);
+
+            int num5 = 5;
+            int num6 = IncrementByOne(num5);
         }
 
         #region Basic Methodai
@@ -51,15 +54,15 @@ namespace Tema_5_Methodai
             return sum;
         }
 
-        public static int SubstractTwoNumbers(int x, int y) 
+        public static int SubstractTwoNumbers(int x, int y)
         {
             int diff = x - y;
             return diff;
         }
 
-        public static void MiniCalculator(string simbolis, int x, int y) 
+        public static void MiniCalculator(string simbolis, int x, int y)
         {
-            switch (simbolis) 
+            switch (simbolis)
             {
                 case "+":
                     int sum = AddTwoNumbers(x, y);
@@ -76,7 +79,7 @@ namespace Tema_5_Methodai
         }
 
         //C# 8 Swtich Expression
-        public static void MiniCalculator2(string simbolis, int x, int y) 
+        public static void MiniCalculator2(string simbolis, int x, int y)
         {
             int result = simbolis switch
             {
@@ -88,7 +91,7 @@ namespace Tema_5_Methodai
             Console.WriteLine($"Resultas {x} {simbolis} {y} = {result}");
         }
 
-        public static void AddToList(List<string> stringList, string stringToAdd) 
+        public static void AddToList(List<string> stringList, string stringToAdd)
         {
             stringList.Add(stringToAdd);
         }
@@ -98,6 +101,13 @@ namespace Tema_5_Methodai
             List<string> stringList = new List<string>();
             stringList.Add(stringToAdd);
             return stringList;
+        }
+
+        //REF KEYWORD
+
+        public static int IncrementByOne(int num) 
+        {
+            return num++;
         }
 
         #endregion

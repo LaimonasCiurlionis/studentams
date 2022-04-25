@@ -40,17 +40,17 @@ namespace HTML_Generator
 
         private string _rowTemplate =
 @"
-<tr style='background-color:{6}'>
-        <td>{0}</td>
-        <td>{1}</td>
-        <td>{2}</td>
-        <td>{3}</td>
-        <td>{4}</td>
-        <td>{5}</td>
-</tr>
-";
+            <tr style='background-color:{6}'>
+                    <td>{0}</td>
+                    <td>{1}</td>
+                    <td>{2}</td>
+                    <td>{3}</td>
+                    <td>{4}</td>
+                    <td>{5}</td>
+            </tr>
+            ";
 
-        public string FormatHTML(List<ReportItem> reportItems) 
+        public string FormatHTML(List<ReportItem> reportItems)
         {
             string rows = MakeTableRows(reportItems);
             string table = MakeTable(rows, true);
@@ -59,17 +59,17 @@ namespace HTML_Generator
             return page;
         }
 
-        private string MakePage(string item) 
+        private string MakePage(string item)
         {
             return _pageTemplate.Replace("{0}", item);
         }
 
-        private string MakeTable(string item, bool isEU) 
+        private string MakeTable(string item, bool isEU)
         {
             return string.Format(_tableTemplate, isEU ? "Aircrafts from EU" : "Aircrafts from non EU", item);
         }
 
-        private string MakeTableRows(List<ReportItem> reportItems) 
+        private string MakeTableRows(List<ReportItem> reportItems)
         {
             string tableRows = string.Empty;
 
@@ -92,9 +92,9 @@ namespace HTML_Generator
             return tableRows;
         }
 
-        private string GetLineColor(ReportItem reportItem) 
+        private string GetLineColor(ReportItem reportItem)
         {
-            if (reportItem.BelongsToEU) 
+            if (reportItem.BelongsToEU)
             {
                 //sviesiai mėlyna
                 return "#99ccff";

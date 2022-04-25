@@ -3,10 +3,23 @@ using System.Collections.Generic;
 
 namespace HTML_Generator
 {
-    class Program
+    public class Person 
+    {
+        public string Name { get; set; }
+    }
+
+    public class Program
     {
         static void Main(string[] args)
         {
+            var t = new Generic<Person>();
+
+            t.Add(new Person
+            {
+                Name = "antanas"
+            });
+
+
             var htmlFormatter = new HTMLFormatter();
 
             var reportItem = new List<ReportItem>

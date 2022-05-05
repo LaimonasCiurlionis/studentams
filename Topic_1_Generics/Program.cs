@@ -17,6 +17,12 @@ namespace Topic_1_Generics
             }
         }
 
+        public struct HumanStruct 
+        {
+            public string Name { get; set; }
+            public string Lastname { get; set; }
+        }
+
 
         static void Main(string[] args)
         {
@@ -51,6 +57,21 @@ namespace Topic_1_Generics
             List<object> humanList = new List<object>();
             humanList.Add(new Human {Name = "John", Lastname = "Doe" });
             humanList.Add(new Human {Name = "John", Lastname = "Doe" });
+
+
+            //GENERIC CONSTRAINTS
+            var orderRepo = new OrderRepository();
+            var baseRepo = new BaseRepository<Order>(new List<Order> { new Order { Id = 1, Name = "Test" } });
+            var result = baseRepo.Get();
+
+            var structRepo = new BaseRepositoryStruct<HumanStruct>();
+
+            var genericClass = new GenericClass<Human, Human>();
+
+            var sportsLeagueII = new SportsLeagueII<BasktetballTeam, int, string>();
+
+            sportsLeagueII.Add(new BasktetballTeam());
+            sportsLeagueII.Add(5);
         }
 
         //Generic methods

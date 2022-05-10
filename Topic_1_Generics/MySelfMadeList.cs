@@ -120,14 +120,11 @@ namespace Topic_1_Generics
             BasketballTeams = new List<BasktetballTeam>();
         }
 
-        public void Add(object team)
+        public void Add(B team)
         {
-            var t = typeof(BasktetballTeam);
-            var t1 = team.GetType();
-
             if (team.GetType() == typeof(BasktetballTeam))
             {
-                BasketballTeams.Add((BasktetballTeam)team);
+                BasketballTeams.Add((BasktetballTeam)(object)team);
             }
             else
             {

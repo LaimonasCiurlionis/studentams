@@ -153,9 +153,6 @@ namespace Topic_5_Linq_Lamda
             };
 
             var humansWithAnimalsSelect = humansWithAnimals.SelectMany(x => x.Animals);
-
-
-
         }
     }
 }
